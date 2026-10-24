@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#32108b">
+  <meta name="description" content="NAUALU — berita, sejarah, budaya, pariwisata, kuliner, dan olahraga.">
+  <title>NAUALU — Berita & Cerita</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+    <a class="brand" href="#" aria-label="NAUALU Beranda">
+      <span class="brand-mark">N</span><span>NAUALU</span>
+    </a>
+    <button class="icon-btn" id="searchBtn" aria-label="Cari berita">⌕</button>
+  </header>
+
+  <section class="search-panel hidden" id="searchPanel">
+    <input id="searchInput" type="search" placeholder="Cari berita NAUALU..." aria-label="Cari berita">
+  </section>
+
+  <nav class="category-strip" id="categoryStrip" aria-label="Kategori">
+    <button class="chip active" data-category="">Untuk Anda</button>
+    <button class="chip" data-category="Tapanuli Utara">Taput</button>
+    <button class="chip" data-category="Sumatera Utara">Sumut</button>
+    <button class="chip" data-category="Nasional">Nasional</button>
+    <button class="chip" data-category="Sejarah">Sejarah</button>
+    <button class="chip" data-category="Budaya">Budaya</button>
+    <button class="chip" data-category="Pariwisata">Pariwisata</button>
+    <button class="chip" data-category="Kuliner">Kuliner</button>
+    <button class="chip" data-category="Olahraga">Olahraga</button>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-badge">KABAR & CERITA</div>
+      <h1>Dari Tapanuli Utara,<br>untuk semua.</h1>
+      <p>Berita, sejarah, budaya, dan kisah yang layak dikenang.</p>
+      <div class="hero-glow"></div>
+    </section>
+
+    <section class="section-head">
+      <div><p class="eyebrow">SELALU TERBARU</p><h2>Berita pilihan</h2></div>
+      <button class="text-btn" id="refreshBtn">Muat ulang ↻</button>
+    </section>
+
+    <div id="status" class="status">Memuat berita dari NAUALU…</div>
+    <section id="newsList" class="news-list" aria-live="polite"></section>
+    <button class="load-more hidden" id="loadMore">Muat berita lainnya</button>
+    <p class="source-note">Sumber artikel: NAUALU Blogger. Konten dan hak cipta tetap mengikuti artikel asli.</p>
+  </main>
+
+  <aside class="drawer hidden" id="drawer">
+    <div class="drawer-card">
+      <div class="drawer-head"><span class="brand-mark">N</span><strong>Menu NAUALU</strong><button id="closeDrawer" class="icon-btn">×</button></div>
+      <button class="drawer-link" data-action="home">⌂ <span>Beranda</span></button>
+      <button class="drawer-link" data-action="latest">▤ <span>Berita terbaru</span></button>
+      <button class="drawer-link" data-action="saved">♡ <span>Berita tersimpan</span></button>
+      <a class="drawer-link" href="https://www.naualu.my.id/" target="_blank" rel="noopener">↗ <span>Buka website NAUALU</span></a>
+      <div class="drawer-foot">Hita Batak, Hita Parsaoran</div>
+    </div>
+  </aside>
+
+  <nav class="bottom-nav" aria-label="Navigasi bawah">
+    <button class="nav-item active" data-tab="home"><span>⌂</span>Beranda</button>
+    <button class="nav-item" data-tab="latest"><span>▤</span>Terbaru</button>
+    <button class="nav-item" data-tab="tv"><span>▶</span>NAUALU TV</button>
+    <button class="nav-item" data-tab="saved"><span>♡</span>Tersimpan</button>
+    <button class="nav-item" data-tab="menu"><span>☰</span>Menu</button>
+  </nav>
+
+  <div id="articleModal" class="article-modal hidden" role="dialog" aria-modal="true" aria-label="Detail berita">
+    <div class="article-sheet">
+      <div class="sheet-top"><button id="backToList" class="icon-btn">←</button><span>NAUALU</span><button id="shareArticle" class="icon-btn">↗</button></div>
+      <div id="articleContent"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
